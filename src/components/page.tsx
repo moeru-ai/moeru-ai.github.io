@@ -7,10 +7,12 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from './ui/
 // import { Switch } from './ui/switch'
 import { colors } from './ui/theme'
 
+import src from '../assets/moeru-ai.png'
+
 export const Page = () => (
   <Card width={384}>
     <CardHeader flexDirection="row">
-      <Avatar marginRight={8} src="https://github.com/moeru-ai.png" />
+      <Avatar marginRight={8} src={src} />
       <Container flexDirection="column">
         <CardTitle>
           <Text>Moeru AI Research</Text>
