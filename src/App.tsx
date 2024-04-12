@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// @ts-expect-error no types
+import { damp3 } from 'maath/easing/dist/maath-easing.esm'
+import { Canvas, useFrame } from '@react-three/fiber'
+import { Root } from '@react-three/uikit'
 
-function App() {
-  const [count, setCount] = useState(0)
+import { Defaults } from './components/ui/theme'
+import { Page } from './components/page'
+import { Env } from './components/env'
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+export const App = () => (
+  <Canvas
+    shadows
+    camera={{ position: [0, 0, 1], fov: 35 }}
+    style={{ height: '100dvh', touchAction: 'none' }}
+    gl={{ localClippingEnabled: true }}
+  >
+    <Rig />
+    <Root>
+      <Defaults>
+        <Page />
+        <Env />
+      </Defaults>
+    </Root>
+  </Canvas>
+)
+
+/**
+ * from the "uikit/card" example
+ * {@link https://github.com/pmndrs/uikit/tree/main/examples/card}
+ * {@link https://github.com/pmndrs/uikit/blob/c3f531b2aefe9242f7d944a65d426c72f0a2de15/examples/card/src/App.tsx#L42-L48}
+ */
+const Rig = () => {
+  useFrame((state, delta) => {
+    damp3(state.camera.position, [state.pointer.x * 2, state.pointer.y * 2, 18], 0.35, delta)
+    state.camera.lookAt(0, 0, -10)
+  })
+
+  return null
 }
-
-export default App

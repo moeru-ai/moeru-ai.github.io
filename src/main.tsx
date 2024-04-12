@@ -1,10 +1,14 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+import { setPreferredColorScheme } from '@react-three/uikit'
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import { App } from './app.tsx'
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+import './styles.css'
+
+setPreferredColorScheme('system')
+
+createRoot(document.getElementById('root') as HTMLCanvasElement).render(
+  <StrictMode>
     <App />
-  </React.StrictMode>,
+  </StrictMode>,
 )
