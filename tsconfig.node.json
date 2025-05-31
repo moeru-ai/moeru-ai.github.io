@@ -1,11 +1,10 @@
 {
+  "extends": [
+    "@importantimport/tsconfig/node.json",
+    "@importantimport/tsconfig/parts/check-js.json"
+  ],
   "compilerOptions": {
-    "composite": true,
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "strict": true,
-    "allowSyntheticDefaultImports": true,
-    "skipLibCheck": true
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo"
   },
-  "include": ["vite.config.ts"]
+  "include": ["*.config.ts", "*.config.js"]
 }

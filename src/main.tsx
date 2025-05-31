@@ -1,12 +1,9 @@
-import { setPreferredColorScheme } from '@react-three/uikit'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
-import { App } from './App.tsx'
-import './styles.css'
+import { App } from './app.tsx'
 
-setPreferredColorScheme('system')
-
+// eslint-disable-next-line @masknet/no-top-level
 createRoot(document.getElementById('root') as HTMLCanvasElement).render(
   <StrictMode>
     <App />
