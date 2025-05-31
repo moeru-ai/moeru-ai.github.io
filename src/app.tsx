@@ -1,3 +1,9 @@
+import { Heading, Theme } from '@radix-ui/themes'
+
 export const App = () => (
-  <h1>Under Construction</h1>
+  <Theme>
+    <Heading className="doto" size="9">
+      MOERU AI
+    </Heading>
+  </Theme>
 )

@@ -3,10 +3,14 @@ ignorePaths: []
 dictionaryDefinitions: []
 dictionaries: []
 words:
+  - doto
   - drei
   - eslintcache
+  - fontless
+  - fontsource
   - importantimport
   - masknet
   - moeru
+  - ROND
 ignoreWords: []
 import: []
