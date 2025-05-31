@@ -4,6 +4,7 @@ dictionaryDefinitions: []
 dictionaries: []
 words:
   - drei
+  - eslintcache
   - importantimport
   - moeru
 ignoreWords: []

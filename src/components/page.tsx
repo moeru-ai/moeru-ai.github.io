@@ -1,13 +1,12 @@
 import { Container, Text } from '@react-three/uikit'
-import { Github, BookText } from '@react-three/uikit-lucide'
-
-import { Avatar } from './ui/avatar'
-import { Button } from './ui/button'
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from './ui/card'
-// import { Switch } from './ui/switch'
-import { colors } from './ui/theme'
+import { BookText, Github } from '@react-three/uikit-lucide'
 
 import src from '../assets/moeru-ai.png'
+import { Avatar } from './ui/avatar'
+import { Button } from './ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
+// import { Switch } from './ui/switch'
+import { colors } from './ui/theme'
 
 export const Page = () => (
   <Card width={384}>
@@ -24,12 +23,12 @@ export const Page = () => (
       {/* <Switch marginLeft="auto" /> */}
     </CardHeader>
     <CardContent flexDirection="column" gap={16}>
-      <Button variant="secondary" flexDirection="row" width="100%" onClick={() => window.open('https://github.com/moeru-ai', '_blank')}>
-        <Github color={colors.primary} marginRight={8} height={16} width={16} />
+      <Button flexDirection="row" onClick={() => window.open('https://github.com/moeru-ai', '_blank')} variant="secondary" width="100%">
+        <Github color={colors.primary} height={16} marginRight={8} width={16} />
         <Text>GitHub</Text>
       </Button>
-      <Button variant="secondary" flexDirection="row" width="100%" onClick={() => window.open('https://ai.kwaa.moe/hub', '_blank')}>
-        <BookText marginRight={8} height={16} width={16} />
+      <Button flexDirection="row" onClick={() => window.open('https://ai.kwaa.moe/hub', '_blank')} variant="secondary" width="100%">
+        <BookText height={16} marginRight={8} width={16} />
         <Text>Hub</Text>
       </Button>
     </CardContent>

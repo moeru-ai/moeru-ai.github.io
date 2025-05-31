@@ -1,8 +1,8 @@
-import { useRef, useState } from 'react'
+import { PointMaterial, Points } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
 // @ts-expect-error no types
 import { inSphere } from 'maath/random/dist/maath-random.esm'
-import { useFrame } from '@react-three/fiber'
-import { Points, PointMaterial } from '@react-three/drei'
+import { useRef, useState } from 'react'
 
 /**
  * from the "Gatsby stars" example
@@ -11,7 +11,7 @@ import { Points, PointMaterial } from '@react-three/drei'
  */
 export const Stars = () => {
   const ref = useRef({ rotation: { x: 0, y: 0 } })
-  const [sphere] = useState(() => inSphere(new Float32Array(5000), { radius: 10 }))
+  const [sphere] = useState(() => inSphere(Float32Array.from(5000), { radius: 10 }))
 
   useFrame((_state, delta) => {
     ref.current.rotation.x -= delta / 10
@@ -20,8 +20,8 @@ export const Stars = () => {
 
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
-      <Points ref={ref as never} positions={sphere} stride={3} frustumCulled={false}>
-        <PointMaterial color="#eee" size={0.039} sizeAttenuation={true} depthWrite={false} />
+      <Points frustumCulled={false} positions={sphere} ref={ref as never} stride={3}>
+        <PointMaterial color="#eee" depthWrite={false} size={0.039} sizeAttenuation={true} />
       </Points>
     </group>
   )

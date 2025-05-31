@@ -1,15 +1,15 @@
 {
   "name": "moeru-ai.github.io",
-  "private": true,
-  "version": "0.0.0",
   "type": "module",
+  "version": "0.0.0",
+  "private": true,
   "packageManager": "pnpm@10.10.0",
   "scripts": {
-    "dev": "vite",
     "build": "tsc && vite build",
+    "component": "uikit component",
+    "dev": "vite",
     "lint": "eslint --flag unstable_native_nodejs_ts_config --cache .",
-    "preview": "vite preview",
-    "component": "uikit component"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@react-three/drei": "^9.105.3",

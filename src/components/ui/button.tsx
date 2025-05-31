@@ -1,5 +1,8 @@
-import { AllOptionalProperties, Container, DefaultProperties } from '@react-three/uikit'
-import { ComponentPropsWithoutRef } from 'react'
+import type { AllOptionalProperties } from '@react-three/uikit'
+import type { ComponentPropsWithoutRef } from 'react'
+
+import { Container, DefaultProperties } from '@react-three/uikit'
+
 import { colors } from './theme'
 
 const buttonVariants = {
@@ -25,27 +28,6 @@ const buttonVariants = {
       color: colors.destructiveForeground,
     },
   },
-  outline: {
-    containerHoverProps: {
-      backgroundColor: colors.accent,
-    },
-    containerProps: {
-      border: 1,
-      borderColor: colors.input,
-      backgroundColor: colors.background,
-    },
-  }, //TODO: hover:text-accent-foreground",
-  secondary: {
-    containerHoverProps: {
-      backgroundOpacity: 0.8,
-    },
-    containerProps: {
-      backgroundColor: colors.secondary,
-    },
-    defaultProps: {
-      color: colors.secondaryForeground,
-    },
-  },
   ghost: {
     containerHoverProps: {
       backgroundColor: colors.accent,
@@ -57,29 +39,50 @@ const buttonVariants = {
     defaultProps: {
       color: colors.primary,
     },
-  }, //TODO: underline-offset-4 hover:underline",
+  }, // TODO: underline-offset-4 hover:underline",
+  outline: {
+    containerHoverProps: {
+      backgroundColor: colors.accent,
+    },
+    containerProps: {
+      backgroundColor: colors.background,
+      border: 1,
+      borderColor: colors.input,
+    },
+  }, // TODO: hover:text-accent-foreground",
+  secondary: {
+    containerHoverProps: {
+      backgroundOpacity: 0.8,
+    },
+    containerProps: {
+      backgroundColor: colors.secondary,
+    },
+    defaultProps: {
+      color: colors.secondaryForeground,
+    },
+  },
 }
 
 const buttonSizes = {
   default: { height: 40, paddingX: 16, paddingY: 8 },
-  sm: { height: 36, paddingX: 12 },
-  lg: { height: 42, paddingX: 32 },
   icon: { height: 40, width: 40 },
+  lg: { height: 42, paddingX: 32 },
+  sm: { height: 36, paddingX: 12 },
 } satisfies { [Key in string]: ComponentPropsWithoutRef<typeof Container> }
 
 export function Button({
   children,
-  variant = 'default',
-  size = 'default',
   disabled = false,
   hover,
+  size = 'default',
+  variant = 'default',
   ...props
 }: ComponentPropsWithoutRef<typeof Container> & {
-  variant?: keyof typeof buttonVariants
-  size?: keyof typeof buttonSizes
   disabled?: boolean
+  size?: keyof typeof buttonSizes
+  variant?: keyof typeof buttonVariants
 }) {
-  const { containerProps, defaultProps, containerHoverProps } = buttonVariants[variant] as {
+  const { containerHoverProps, containerProps, defaultProps } = buttonVariants[variant] as {
     [Key in string]: {
       containerHoverProps?: ComponentPropsWithoutRef<typeof Container>['hover']
       containerProps?: Omit<ComponentPropsWithoutRef<typeof Container>, 'hover'>
@@ -90,13 +93,13 @@ export function Button({
 
   return (
     <Container
-      borderRadius={6}
       alignItems="center"
+      borderRadius={6}
       justifyContent="center"
       {...containerProps}
       {...sizeProps}
-      borderOpacity={disabled ? 0.5 : undefined}
       backgroundOpacity={disabled ? 0.5 : undefined}
+      borderOpacity={disabled ? 0.5 : undefined}
       cursor={disabled ? undefined : 'pointer'}
       flexDirection="row"
       hover={{
@@ -107,8 +110,8 @@ export function Button({
     >
       <DefaultProperties
         fontSize={14}
-        lineHeight={1.43}
         fontWeight="medium"
+        lineHeight={1.43}
         wordBreak="keep-all"
         {...defaultProps}
         opacity={disabled ? 0.5 : undefined}

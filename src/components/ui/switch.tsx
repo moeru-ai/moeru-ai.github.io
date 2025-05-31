@@ -1,33 +1,34 @@
+import type { ComponentPropsWithoutRef } from 'react'
+
 import { Container } from '@react-three/uikit'
-import { ComponentPropsWithoutRef, useState } from 'react'
+import { useState } from 'react'
+
 import { colors } from './theme'
 
 export function Switch({
-  defaultChecked,
   checked: providedChecked,
+  defaultChecked,
   disabled = false,
   onCheckedChange,
   ...props
 }: Omit<ComponentPropsWithoutRef<typeof Container>, 'children'> & {
-  defaultChecked?: boolean
   checked?: boolean
+  defaultChecked?: boolean
   disabled?: boolean
-  onCheckedChange?(checked: boolean): void
+  onCheckedChange?: (checked: boolean) => void
 }) {
   const [uncontrolled, setUncontrolled] = useState(defaultChecked ?? false)
   const checked = providedChecked ?? uncontrolled
   return (
     <Container
-      height={24}
-      width={44}
-      flexShrink={0}
-      flexDirection="row"
-      padding={2}
       alignItems="center"
+      backgroundColor={checked ? colors.primary : colors.input}
       backgroundOpacity={disabled ? 0.5 : undefined}
       borderRadius={1000}
-      backgroundColor={checked ? colors.primary : colors.input}
       cursor={disabled ? undefined : 'pointer'}
+      flexDirection="row"
+      flexShrink={0}
+      height={24}
       onClick={
         disabled
           ? undefined
@@ -38,14 +39,16 @@ export function Switch({
               onCheckedChange?.(!checked)
             }
       }
+      padding={2}
+      width={44}
       {...props}
     >
       <Container
-        width={20}
-        height={20}
-        borderRadius={1000}
-        transformTranslateX={checked ? 20 : 0}
         backgroundColor={colors.background}
+        borderRadius={1000}
+        height={20}
+        transformTranslateX={checked ? 20 : 0}
+        width={20}
       />
     </Container>
   )

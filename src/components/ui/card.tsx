@@ -1,31 +1,14 @@
+import type { ComponentPropsWithoutRef, ReactNode } from 'react'
+
 import { Container, DefaultProperties } from '@react-three/uikit'
-import { ComponentPropsWithoutRef, ReactNode } from 'react'
+
 import { colors } from './theme'
 
 export function Card({ children, ...props }: ComponentPropsWithoutRef<typeof Container>) {
   return (
-    <Container flexDirection="column" borderRadius={8} border={1} backgroundColor={colors.card} {...props}>
+    <Container backgroundColor={colors.card} border={1} borderRadius={8} flexDirection="column" {...props}>
       <DefaultProperties color={colors.cardForeground}>{children}</DefaultProperties>
     </Container>
-  )
-}
-
-export function CardHeader(props: ComponentPropsWithoutRef<typeof Container>) {
-  return <Container padding={24} flexDirection="column" gap={6} {...props} />
-}
-
-export function CardTitle({ children }: { children?: ReactNode }) {
-  return (
-    <DefaultProperties fontWeight="semi-bold" letterSpacing={-0.4} fontSize={24} lineHeight={1}>
-      {children}
-    </DefaultProperties>
-  )
-}
-export function CardDescription({ children }: { children?: ReactNode }) {
-  return (
-    <DefaultProperties fontSize={14} lineHeight={1.43} color={colors.mutedForeground}>
-      {children}
-    </DefaultProperties>
   )
 }
 
@@ -33,6 +16,25 @@ export function CardContent(props: ComponentPropsWithoutRef<typeof Container>) {
   return <Container padding={24} paddingTop={0} {...props} />
 }
 
+export function CardDescription({ children }: { children?: ReactNode }) {
+  return (
+    <DefaultProperties color={colors.mutedForeground} fontSize={14} lineHeight={1.43}>
+      {children}
+    </DefaultProperties>
+  )
+}
 export function CardFooter(props: ComponentPropsWithoutRef<typeof Container>) {
-  return <Container flexDirection="row" alignItems="center" padding={24} paddingTop={0} {...props} />
+  return <Container alignItems="center" flexDirection="row" padding={24} paddingTop={0} {...props} />
+}
+
+export function CardHeader(props: ComponentPropsWithoutRef<typeof Container>) {
+  return <Container flexDirection="column" gap={6} padding={24} {...props} />
+}
+
+export function CardTitle({ children }: { children?: ReactNode }) {
+  return (
+    <DefaultProperties fontSize={24} fontWeight="semi-bold" letterSpacing={-0.4} lineHeight={1}>
+      {children}
+    </DefaultProperties>
+  )
 }

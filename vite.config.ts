@@ -1,16 +1,16 @@
-import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  optimizeDeps: {
-    include: ['@react-three/uikit', '@react-three/uikit-lucide'],
-    esbuildOptions: {
-      target: 'esnext'
-    }
-  },
   build: {
-    target: 'esnext'
-  }
+    target: 'esnext',
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      target: 'esnext',
+    },
+    include: ['@react-three/uikit', '@react-three/uikit-lucide'],
+  },
+  plugins: [react()],
 })
