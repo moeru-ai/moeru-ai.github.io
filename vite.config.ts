@@ -10,7 +10,6 @@ export default defineConfig({
     esbuildOptions: {
       target: 'esnext',
     },
-    include: ['@react-three/uikit', '@react-three/uikit-lucide'],
   },
   plugins: [react({
     babel: { plugins: [
