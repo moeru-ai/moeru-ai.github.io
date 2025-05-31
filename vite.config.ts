@@ -12,5 +12,9 @@ export default defineConfig({
     },
     include: ['@react-three/uikit', '@react-three/uikit-lucide'],
   },
-  plugins: [react()],
+  plugins: [react({
+    babel: { plugins: [
+      ['babel-plugin-react-compiler', { target: '19' }],
+    ] },
+  })],
 })
