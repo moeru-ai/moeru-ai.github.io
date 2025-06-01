@@ -1,7 +1,7 @@
 import { Icon } from '@iconify/react'
 import { Box, IconButton, Text, Tooltip } from '@radix-ui/themes'
 
-export const Nav = () => {
+export const Header = () => {
   const navigate = (url: string) => () => window.open(url, '_blank', 'noopener')
 
   return (
