@@ -215,17 +215,18 @@ const Band = ({ maxSpeed = 50, minSpeed = 0 }: BandProps) => {
             position={[0, -1.2, -0.05]}
             scale={2.25}
           >
-            <Decal mesh={{ current: nodes.card as THREE.Mesh }} position={[0, 0.5, 0]} rotation={[0, 0, 0]} scale={0.8}>
+            <Decal mesh={{ current: nodes.card as THREE.Mesh }} position={[0, 0.5, 0]} rotation={[0, 0, 0]} scale={0.75}>
               <meshBasicMaterial alphaTest={0.5} map={moeruAI} polygonOffset polygonOffsetFactor={-1} side={THREE.FrontSide} transparent />
             </Decal>
             <mesh geometry={(nodes.card as THREE.Mesh).geometry} scale={0.99}>
               <meshPhysicalMaterial
                 clearcoat={1}
                 clearcoatRoughness={0.15}
-                // map={materials.base.map}
-                // map-anisotropy={16}
-                metalness={0.8}
-                roughness={0.9}
+                iridescence={1}
+                iridescenceIOR={1}
+                iridescenceThicknessRange={[0, 2400]}
+                metalness={0.5}
+                roughness={0.3}
               />
             </mesh>
             <mesh
