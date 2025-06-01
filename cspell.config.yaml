@@ -13,6 +13,8 @@ words:
   - fontsource
   - GLTF
   - gsap
+  - huggingface
+  - iconify
   - importantimport
   - lerp
   - lerped

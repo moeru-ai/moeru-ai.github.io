@@ -9,3 +9,9 @@
 .font-doto {
   font-variation-settings: "wght" 700, "ROND" 100;
 }
+
+#app {
+  max-width: 100dvw;
+  max-height: 100dvh;
+  overflow: hidden;
+}
