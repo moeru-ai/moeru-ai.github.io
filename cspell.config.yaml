@@ -3,14 +3,27 @@ ignorePaths: []
 dictionaryDefinitions: []
 dictionaries: []
 words:
+  - angvel
+  - Catmull
   - doto
   - drei
   - eslintcache
   - fontless
   - fontsource
+  - GLTF
+  - gsap
   - importantimport
+  - lerp
+  - lerped
+  - Lightformer
   - masknet
+  - meshline
   - moeru
+  - preflights
+  - reactbits
   - ROND
+  - unocss
+  - unproject
+  - wght
 ignoreWords: []
 import: []

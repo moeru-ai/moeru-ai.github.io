@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client'
 import { App } from './app.tsx'
 
 import '@radix-ui/themes/styles.css'
+import 'virtual:uno.css'
 
 import './styles/font.css'
 

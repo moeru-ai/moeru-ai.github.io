@@ -1,3 +1,4 @@
+import unocss from '@unocss/vite'
 import react from '@vitejs/plugin-react'
 // import { fontless } from 'fontless'
 import { defineConfig } from 'vite'
@@ -16,5 +17,6 @@ export default defineConfig({
     react({ babel: { plugins: [['babel-plugin-react-compiler', { target: '19' }]] } }),
     // https://github.com/unjs/fontaine/tree/main/packages/fontless#configuration
     // fontless(),
+    unocss(),
   ],
 })
