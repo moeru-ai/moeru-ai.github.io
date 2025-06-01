@@ -5,6 +5,7 @@ dictionaries: []
 words:
   - angvel
   - Catmull
+  - clearcoat
   - doto
   - drei
   - eslintcache
@@ -18,6 +19,7 @@ words:
   - Lightformer
   - masknet
   - meshline
+  - metalness
   - moeru
   - preflights
   - reactbits

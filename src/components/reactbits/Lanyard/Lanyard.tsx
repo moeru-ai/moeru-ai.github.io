@@ -28,7 +28,8 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
 
 import cardGLB from './card.glb?url'
-import lanyard from './lanyard.png'
+// import lanyard from './lanyard.png'
+import lanyard from './moeru-ai-lanyard.png'
 import './Lanyard.css'
 
 // eslint-disable-next-line @masknet/no-top-level
@@ -217,7 +218,7 @@ const Band = ({ maxSpeed = 50, minSpeed = 0 }: BandProps) => {
             <Decal mesh={{ current: nodes.card as THREE.Mesh }} position={[0, 0.5, 0]} rotation={[0, 0, 0]} scale={0.8}>
               <meshBasicMaterial alphaTest={0.5} map={moeruAI} polygonOffset polygonOffsetFactor={-1} side={THREE.FrontSide} transparent />
             </Decal>
-            <mesh geometry={(nodes.card as THREE.Mesh).geometry} scale={0.95}>
+            <mesh geometry={(nodes.card as THREE.Mesh).geometry} scale={0.99}>
               <meshPhysicalMaterial
                 clearcoat={1}
                 clearcoatRoughness={0.15}
