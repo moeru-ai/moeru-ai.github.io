@@ -168,7 +168,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
       style={{
         // alignItems: 'center',
         background: 'transparent',
-        display: 'flex',
+        // display: 'flex',
         overflow: 'hidden',
         // height: '100%',
         position: 'relative',
