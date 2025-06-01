@@ -28,8 +28,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
 
 import cardGLB from './card.glb?url'
-// import lanyard from './lanyard.png'
-import lanyard from './moeru-ai-lanyard.png'
+import lanyard from './lanyard.png'
 import './Lanyard.css'
 
 // eslint-disable-next-line @masknet/no-top-level
