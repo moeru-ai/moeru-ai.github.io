@@ -17,13 +17,13 @@ export const Hero = () => (
     <div className="flex flex-col justify-center! items-center my-auto">
       <TextPressure
         italic={true}
-        minFontSize={192}
+        minFontSize={96}
         text="does kindness plus"
         textColor={gray.gray12}
       />
       <TextPressure
         italic={true}
-        minFontSize={192}
+        minFontSize={96}
         text="sadness equal to zero?"
         textColor={gray.gray12}
       />
