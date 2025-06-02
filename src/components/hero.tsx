@@ -14,7 +14,7 @@ export const Hero = () => (
       dotSize={5}
       gap={50}
     />
-    <div className="flex flex-col justify-center! items-center my-auto">
+    <div className="flex flex-col justify-center! items-center pt-32 lg:pt-28 my-auto">
       <TextPressure
         italic={true}
         minFontSize={96}
