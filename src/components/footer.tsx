@@ -8,7 +8,7 @@ export const Footer = () => {
   const year = useMemo(() => new Date().getFullYear(), [])
 
   return (
-    <Box className="absolute bottom-0 w-screen z-10">
+    <Box className="absolute bottom-0 w-dvw z-10">
       <Box className="w-full flex p-2 lg:p-4 gap-2 justify-center items-center">
         <Members />
         <Box className="grow" />

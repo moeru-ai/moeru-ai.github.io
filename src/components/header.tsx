@@ -5,7 +5,7 @@ export const Header = () => {
   const navigate = (url: string) => () => window.open(url, '_blank', 'noopener')
 
   return (
-    <Box className="absolute w-screen z-10">
+    <Box className="absolute w-dvw z-10">
       <Box className="w-full flex p-2 lg:p-4 gap-2 justify-center items-center">
         <Text className="font-doto leading-none" size="6">MOERU AI</Text>
         <Box className="grow" />

@@ -7,7 +7,7 @@ import Lanyard from './reactbits/Lanyard/Lanyard'
 import TextPressure from './reactbits/TextPressure/TextPressure'
 
 export const Hero = () => (
-  <div className="h-screen w-screen children:absolute children:h-screen children:w-screen" style={{ backgroundColor: 'var(--gray-a2)' }}>
+  <div className="h-dvh w-dvw children:absolute children:h-dvh children:w-dvw" style={{ backgroundColor: 'var(--gray-a2)' }}>
     <DotGrid
       activeColor={mint.mint9}
       baseColor={gray.gray3}
