@@ -215,9 +215,9 @@ const Band = ({ maxSpeed = 50, minSpeed = 0 }: BandProps) => {
             scale={2.25}
           >
             <Decal mesh={{ current: nodes.card as THREE.Mesh }} position={[0, 0.5, 0]} rotation={[0, 0, 0]} scale={0.75}>
-              <meshBasicMaterial alphaTest={0.5} map={moeruAI} polygonOffset polygonOffsetFactor={-1} side={THREE.FrontSide} transparent />
+              <meshBasicMaterial alphaTest={0.5} map={moeruAI} transparent />
             </Decal>
-            <mesh geometry={(nodes.card as THREE.Mesh).geometry} scale={0.99}>
+            <mesh geometry={(nodes.card as THREE.Mesh).geometry}>
               <meshPhysicalMaterial
                 clearcoat={1}
                 clearcoatRoughness={0.15}
@@ -225,6 +225,9 @@ const Band = ({ maxSpeed = 50, minSpeed = 0 }: BandProps) => {
                 iridescenceIOR={1}
                 iridescenceThicknessRange={[0, 2400]}
                 metalness={0.5}
+                polygonOffset
+                polygonOffsetFactor={-0.1}
+                polygonOffsetUnits={4}
                 roughness={0.3}
               />
             </mesh>
