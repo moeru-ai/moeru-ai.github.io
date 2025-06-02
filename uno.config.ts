@@ -22,6 +22,16 @@ export default defineConfig({
             provider: 'none',
           },
         ],
+        pixel: [
+          {
+            name: 'Fusion Pixel 10px Monospaced SC',
+            provider: 'fontsource',
+          },
+          {
+            name: 'sans-serif',
+            provider: 'none',
+          },
+        ],
       },
       // https://unocss.dev/presets/wind4#presetwebfonts
       themeKey: 'font',
