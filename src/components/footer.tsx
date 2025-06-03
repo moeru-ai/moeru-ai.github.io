@@ -12,7 +12,7 @@ export const Footer = () => {
       <Box className="w-full flex p-2 lg:p-4 gap-2 justify-center items-center">
         <Members />
         <Box className="grow" />
-        <Text className="font-pixel leading-none" color="gray">
+        <Text className="font-pixel text-end leading-none" color="gray">
           &#x00A9;
           {' '}
           Moeru AI
