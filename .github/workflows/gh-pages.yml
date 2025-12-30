@@ -14,3 +14,5 @@ permissions:
 jobs:
   deploy:
     uses: importantimport/.github/.github/workflows/pnpm-gh-pages-artifact.yml@main
+    with:
+      path: build/client
