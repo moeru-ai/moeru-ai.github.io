@@ -45,11 +45,11 @@ export const ErrorBoundary = ({ error }: Route.ErrorBoundaryProps) => {
   }
 
   return (
-    <main className="pt-16 p-4 container mx-auto">
+    <main className="mx-auto p-4 pt-16 container">
       <h1>{message}</h1>
       <p>{details}</p>
       {stack != null && (
-        <pre className="w-full p-4 overflow-x-auto">
+        <pre className="p-4 w-full overflow-x-auto">
           <code>{stack}</code>
         </pre>
       )}
@@ -65,7 +65,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => (
       <Meta />
       <Links />
     </head>
-    <body>
+    <body className="bg-white dark:bg-gray-950">
       {children}
       <ScrollRestoration />
       <Scripts />

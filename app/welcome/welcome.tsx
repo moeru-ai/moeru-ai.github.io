@@ -6,7 +6,7 @@ const resources = [
     href: 'https://reactrouter.com/docs',
     icon: (
       <svg
-        className="stroke-gray-600 group-hover:stroke-current dark:stroke-gray-300"
+        className="stroke-gray-600 dark:stroke-gray-300 group-hover:stroke-current"
         fill="none"
         height="20"
         viewBox="0 0 20 20"
@@ -26,7 +26,7 @@ const resources = [
     href: 'https://rmx.as/discord',
     icon: (
       <svg
-        className="stroke-gray-600 group-hover:stroke-current dark:stroke-gray-300"
+        className="stroke-gray-600 dark:stroke-gray-300 group-hover:stroke-current"
         fill="none"
         height="20"
         viewBox="0 0 24 20"
@@ -44,32 +44,32 @@ const resources = [
 ]
 
 export const Welcome = () => (
-  <main className="flex items-center justify-center pt-16 pb-4">
-    <div className="flex-1 flex flex-col items-center gap-16 min-h-0">
-      <header className="flex flex-col items-center gap-9">
-        <div className="w-[500px] max-w-[100vw] p-4">
+  <main className="pb-4 pt-16 flex items-center justify-center">
+    <div className="flex flex-1 flex-col gap-16 min-h-0 items-center">
+      <header className="flex flex-col gap-9 items-center">
+        <div className="p-4 max-w-[100vw] w-[500px]">
           <img
             alt="React Router"
-            className="block w-full dark:hidden"
+            className="w-full block dark:hidden"
             src={logoLight}
           />
           <img
             alt="React Router"
-            className="hidden w-full dark:block"
+            className="w-full hidden dark:block"
             src={logoDark}
           />
         </div>
       </header>
-      <div className="max-w-[300px] w-full space-y-6 px-4">
-        <nav className="rounded-3xl border border-gray-200 p-6 dark:border-gray-700 space-y-4">
-          <p className="leading-6 text-gray-700 dark:text-gray-200 text-center">
+      <div className="px-4 max-w-[300px] w-full space-y-6">
+        <nav className="p-6 border border-gray-200 rounded-3xl space-y-4 dark:border-gray-700">
+          <p className="text-gray-700 leading-6 text-center dark:text-gray-200">
             What&apos;s next?
           </p>
           <ul>
             {resources.map(({ href, icon, text }) => (
               <li key={href}>
                 <a
-                  className="group flex items-center gap-3 self-stretch p-3 leading-normal text-blue-700 hover:underline dark:text-blue-500"
+                  className="group text-blue-700 leading-normal p-3 flex gap-3 items-center self-stretch dark:text-blue-500 hover:underline"
                   href={href}
                   rel="noreferrer"
                   target="_blank"
