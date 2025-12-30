@@ -1,6 +1,11 @@
 import { defineConfig } from '@moeru/eslint-config'
 
 export default defineConfig({
-  unocss: true,
+  // TODO: enable unocss
+  // unocss: true,
   react: true,
+}, {
+  rules: {
+    '@masknet/jsx-prefer-test-id': 'off',
+  },
 })
