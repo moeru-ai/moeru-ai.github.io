@@ -24,10 +24,8 @@ export const Hero = () => (
       <Container>
         <Flex align="center" direction={{ initial: 'column', md: 'row' }} gap="6">
           <Box flexGrow="1" style={{ maxWidth: 500 }}>
-            <Heading className="font-sans" mb="4" size="9" weight="bold">
-              does kindness plus
-              {' '}
-              sadness equal to
+            <Heading mb="4" size="9" weight="bold">
+              <Text>does kindness plus sadness equal to</Text>
               <br />
               <Text color="teal" highContrast>zero?</Text>
             </Heading>
@@ -49,7 +47,6 @@ export const Hero = () => (
               <OrbitControls enableZoom={false} />
             </Canvas>
           </Box>
-
         </Flex>
       </Container>
     </Section>

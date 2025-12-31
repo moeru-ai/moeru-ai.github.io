@@ -1,4 +1,5 @@
 import { Hero } from '~/components/hero'
+import { SplitTextDemo } from '~/components/split-text-demo'
 
 import logoDark from './logo-dark.svg'
 import logoLight from './logo-light.svg'
@@ -48,6 +49,7 @@ const resources = [
 export const Welcome = () => (
   <>
     <Hero />
+    <SplitTextDemo />
     <main className="pb-4 pt-16 flex items-center justify-center">
       <div className="flex flex-1 flex-col gap-16 min-h-0 items-center">
         <header className="flex flex-col gap-9 items-center">

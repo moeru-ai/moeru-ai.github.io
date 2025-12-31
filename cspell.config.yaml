@@ -4,6 +4,7 @@ dictionaryDefinitions: []
 dictionaries: []
 words:
   - angvel
+  - bsmnt
   - Catmull
   - clearcoat
   - doto
@@ -28,6 +29,7 @@ words:
   - preflights
   - reactbits
   - ROND
+  - scrollytelling
   - sonarjs
   - unocss
   - unproject
