@@ -1,3 +1,5 @@
+import { Hero } from '~/components/hero'
+
 import logoDark from './logo-dark.svg'
 import logoLight from './logo-light.svg'
 
@@ -44,44 +46,47 @@ const resources = [
 ]
 
 export const Welcome = () => (
-  <main className="pb-4 pt-16 flex items-center justify-center">
-    <div className="flex flex-1 flex-col gap-16 min-h-0 items-center">
-      <header className="flex flex-col gap-9 items-center">
-        <div className="p-4 max-w-[100vw] w-[500px]">
-          <img
-            alt="React Router"
-            className="w-full block dark:hidden"
-            src={logoLight}
-          />
-          <img
-            alt="React Router"
-            className="w-full hidden dark:block"
-            src={logoDark}
-          />
+  <>
+    <Hero />
+    <main className="pb-4 pt-16 flex items-center justify-center">
+      <div className="flex flex-1 flex-col gap-16 min-h-0 items-center">
+        <header className="flex flex-col gap-9 items-center">
+          <div className="p-4 max-w-[100vw] w-[500px]">
+            <img
+              alt="React Router"
+              className="w-full block dark:hidden"
+              src={logoLight}
+            />
+            <img
+              alt="React Router"
+              className="w-full hidden dark:block"
+              src={logoDark}
+            />
+          </div>
+        </header>
+        <div className="px-4 max-w-[300px] w-full space-y-6">
+          <nav className="p-6 border border-gray-200 rounded-3xl space-y-4 dark:border-gray-700">
+            <p className="text-gray-700 leading-6 text-center dark:text-gray-200">
+              What&apos;s next?
+            </p>
+            <ul>
+              {resources.map(({ href, icon, text }) => (
+                <li key={href}>
+                  <a
+                    className="group text-blue-700 leading-normal p-3 flex gap-3 items-center self-stretch dark:text-blue-500 hover:underline"
+                    href={href}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    {icon}
+                    {text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
-      </header>
-      <div className="px-4 max-w-[300px] w-full space-y-6">
-        <nav className="p-6 border border-gray-200 rounded-3xl space-y-4 dark:border-gray-700">
-          <p className="text-gray-700 leading-6 text-center dark:text-gray-200">
-            What&apos;s next?
-          </p>
-          <ul>
-            {resources.map(({ href, icon, text }) => (
-              <li key={href}>
-                <a
-                  className="group text-blue-700 leading-normal p-3 flex gap-3 items-center self-stretch dark:text-blue-500 hover:underline"
-                  href={href}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  {icon}
-                  {text}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
       </div>
-    </div>
-  </main>
+    </main>
+  </>
 )

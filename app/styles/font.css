@@ -1,0 +1,6 @@
+/* https://www.radix-ui.com/themes/docs/theme/typography#custom-fonts */
+.radix-themes {
+  --heading-font-family: var(--font-sans);
+  --code-font-family: var(--font-mono);
+  --default-font-family: var(--font-serif);
+}

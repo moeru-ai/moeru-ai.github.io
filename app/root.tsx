@@ -1,5 +1,6 @@
 import type { Route } from './+types/root'
 
+import { Theme } from '@radix-ui/themes'
 import {
   isRouteErrorResponse,
   Links,
@@ -10,6 +11,8 @@ import {
 } from 'react-router'
 
 import 'uno.css'
+import './styles/font.css'
+import '@radix-ui/themes/styles.css'
 
 export const links: Route.LinksFunction = () => [
   { href: 'https://fonts.googleapis.com', rel: 'preconnect' },
@@ -61,8 +64,10 @@ export const Layout = ({ children }: { children: React.ReactNode }) => (
       <Meta />
       <Links />
     </head>
-    <body className="bg-white dark:bg-gray-950">
-      {children}
+    <body>
+      <Theme accentColor="teal" appearance="dark">
+        {children}
+      </Theme>
       <ScrollRestoration />
       <Scripts />
     </body>
