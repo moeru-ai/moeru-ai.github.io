@@ -9,21 +9,14 @@ import { useRef } from 'react'
 export const SplitTextDemo = () => {
   const divRef = useRef<HTMLDivElement>(null)
   const headingRef = useRef<HTMLHeadingElement>(null)
-  const splitInstance = useRef<SplitText>(null)
-
-  const config = {
-    letters: { duration: 0.4, selector: '.letter', stagger: 0.008 },
-    lines: { duration: 0.8, selector: '.line', stagger: 0.08 },
-    words: { duration: 0.6, selector: '.word', stagger: 0.06 },
-  }
+  const splitText = useRef<SplitText>(null)
 
   useGSAP(() => {
     CustomEase.create('osmo-ease', '0.625, 0.05, 0, 1')
 
-    splitInstance.current = new SplitText(headingRef.current, {
-      charsClass: 'letter',
-      linesClass: 'line',
-      type: 'lines, words, chars',
+    splitText.current = new SplitText(headingRef.current, {
+      mask: 'words',
+      type: 'words',
       wordsClass: 'word',
     })
 
@@ -32,8 +25,8 @@ export const SplitTextDemo = () => {
 
   const { contextSafe } = useGSAP({ scope: divRef })
 
-  const animate = contextSafe((type: keyof typeof config) => {
-    const { duration, selector, stagger } = config[type]
+  const animate = contextSafe(() => {
+    const { duration, selector, stagger } = { duration: 0.6, selector: '.word', stagger: 0.06 }
     const targets = headingRef.current!.querySelectorAll(selector)
 
     gsap.fromTo(targets, { yPercent: 110 }, {
@@ -58,9 +51,7 @@ export const SplitTextDemo = () => {
       </Heading>
 
       <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
-        {/* <button onClick={() => animate('lines')}>Animate Lines</button> */}
-        <Button onClick={() => animate('words')}>Animate</Button>
-        {/* <button onClick={() => animate('letters')}>Animate Letters</button> */}
+        <Button onClick={animate}>Animate</Button>
       </div>
     </div>
   )
