@@ -1,8 +1,16 @@
 import type { Route } from './+types/home'
 
-import { Welcome } from '../welcome/welcome'
+import { Header } from '~/components/header'
+import { Hero } from '~/components/hero'
+import { SplitTextDemo } from '~/components/split-text-demo'
 
-const Home = () => <Welcome />
+const Home = () => (
+  <>
+    <Header />
+    <Hero />
+    <SplitTextDemo />
+  </>
+)
 
 export const meta = (_: Route.MetaArgs) => [
   { title: 'Moeru AI' },
