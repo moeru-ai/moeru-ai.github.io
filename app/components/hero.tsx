@@ -24,11 +24,16 @@ export const Hero = () => (
       <Container>
         <Flex align="center" direction={{ initial: 'column', md: 'row' }} gap="6">
           <Box flexGrow="1" style={{ maxWidth: 500 }}>
-            <Heading mb="4" size="9" weight="bold">
+            <Heading mb="4" size="9">
               <Text>does kindness plus sadness equal to</Text>
               <br />
               <Text color="teal" highContrast>zero?</Text>
             </Heading>
+            <Text className="font-serif">
+              Moeru AI builds applications, open-source libraries,
+              <br />
+              and open-weight models to make AI a bit more “Moe”.
+            </Text>
           </Box>
           <Box
             style={{
