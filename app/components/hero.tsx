@@ -35,16 +35,7 @@ export const Hero = () => (
               and open-weight models to make AI a bit more “Moe”.
             </Text>
           </Box>
-          <Box
-            style={{
-              background: 'var(--gray-a2)',
-              borderRadius: 'var(--radius-6)',
-              height: '400px',
-              overflow: 'hidden',
-              position: 'relative',
-              width: '100%',
-            }}
-          >
+          <Box className="rounded-[--radius-6] bg-[--gray-a2] h-[400px] w-full relative overflow-hidden">
             <Canvas camera={{ fov: 45, position: [3, 3, 3] }}>
               <ambientLight intensity={1.5} />
               <pointLight position={[10, 10, 10]} />
