@@ -20,7 +20,7 @@ export const SplitTextDemo = () => {
       wordsClass: 'word',
     })
 
-    gsap.set('.line', { overflow: 'hidden' })
+    // gsap.set('.line', { overflow: 'hidden' })
   }, { scope: divRef })
 
   const { contextSafe } = useGSAP({ scope: divRef })

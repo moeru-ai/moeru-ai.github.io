@@ -90,6 +90,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       <head>
         <meta charSet="utf-8" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link href="https://github.com/moeru-ai.png" rel="icon" type="image/png" />
         <Meta />
         <Links />
       </head>
