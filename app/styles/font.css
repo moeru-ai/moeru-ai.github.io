@@ -2,5 +2,5 @@
 .radix-themes {
   --heading-font-family: var(--font-sans) !important;
   --code-font-family: var(--font-mono);
-  --default-font-family: var(--font-serif);
+  /* --default-font-family: var(--font-serif); */
 }

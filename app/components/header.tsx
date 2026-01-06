@@ -1,14 +1,18 @@
+import { MoonIcon, SunIcon } from '@radix-ui/react-icons'
 import { Box, Card, Container, Flex, Grid, Heading, IconButton, SegmentedControl } from '@radix-ui/themes'
 import { gsap } from 'gsap'
 import { useCallback } from 'react'
 
-// import { MoeruAIIcon } from './icons/moeru-ai'
-// import { MoeruAIBorderIcon } from './icons/moeru-ai-border'
+import { useAppearance } from '~/hooks/use-appearance'
 
 export const Header = () => {
+  const [appearance, setAppearance] = useAppearance()
+
   const scrollToTop = useCallback(() => {
     gsap.to(window, { duration: 1, ease: 'power3.inOut', scrollTo: 0 })
   }, [])
+
+  const AppearanceIcon = appearance === 'dark' ? MoonIcon : SunIcon
 
   return (
     <Box
@@ -31,12 +35,17 @@ export const Header = () => {
               <Heading className="!leading-none" size="3">A</Heading>
             </Grid>
           </IconButton>
-          <Card size="1">
-            <SegmentedControl.Root defaultValue="inbox">
-              <SegmentedControl.Item value="inbox">Inbox</SegmentedControl.Item>
-              <SegmentedControl.Item value="drafts">Drafts</SegmentedControl.Item>
-              <SegmentedControl.Item value="sent">Sent</SegmentedControl.Item>
-            </SegmentedControl.Root>
+          <Card className="![--card-border-width:0]" size="1">
+            <Flex align="center" gap="2" justify="center">
+              <SegmentedControl.Root className="!bg-transparent !bg-none" defaultValue="inbox">
+                <SegmentedControl.Item value="inbox">Inbox</SegmentedControl.Item>
+                <SegmentedControl.Item value="drafts">Drafts</SegmentedControl.Item>
+                <SegmentedControl.Item value="sent">Sent</SegmentedControl.Item>
+              </SegmentedControl.Root>
+              <IconButton className="!m-0" color="gray" onClick={() => setAppearance(prev => prev === 'dark' ? 'light' : 'dark')} size="3" variant="ghost">
+                <AppearanceIcon className="size-4" />
+              </IconButton>
+            </Flex>
           </Card>
         </Flex>
       </Container>
