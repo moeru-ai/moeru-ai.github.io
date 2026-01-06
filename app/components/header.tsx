@@ -1,4 +1,4 @@
-import { Box, Button, Card, Container, Flex, Grid, Heading, Link } from '@radix-ui/themes'
+import { Box, Card, Container, Flex, Grid, Heading, IconButton, SegmentedControl } from '@radix-ui/themes'
 import { gsap } from 'gsap'
 import { useCallback } from 'react'
 
@@ -21,33 +21,24 @@ export const Header = () => {
         zIndex: 1000,
       }}
     >
-      <Container size="1">
-        <Card size={{
-          initial: '1',
-          md: '2',
-        }}
-        >
-          <Flex align="center" justify="between">
-            <Button className="!p-1 !-m-1" color="gray" onClick={scrollToTop} variant="ghost">
-              <Grid className="color-[--gray-12] text-center" columns="2" gap="0" rows="2">
-                <Heading className="!leading-none" size="3">萌</Heading>
-                <Box className="m-1 border-r-2 border-t-2"></Box>
-                <Box className="m-1 border-b-2 border-l-2"></Box>
-                <Heading className="!leading-none" size="3">A</Heading>
-              </Grid>
-            </Button>
-
-            <Flex align="center" gap="5">
-              <Link color="gray" highContrast={false} href="#">Foo</Link>
-              <Link color="gray" highContrast={false} href="#">Bar</Link>
-              <Link color="gray" highContrast={false} href="#">Baz</Link>
-            </Flex>
-
-            <Flex gap="3">
-              <Button radius="full" variant="solid">Lorem</Button>
-            </Flex>
-          </Flex>
-        </Card>
+      <Container>
+        <Flex align="center" justify="between">
+          <IconButton color="gray" onClick={scrollToTop} size="4" variant="ghost">
+            <Grid className="color-[--gray-12] text-center" columns="2" gap="0" rows="2">
+              <Heading className="!leading-none" size="3">萌</Heading>
+              <Box className="m-1 border-r-2 border-t-2"></Box>
+              <Box className="m-1 border-b-2 border-l-2"></Box>
+              <Heading className="!leading-none" size="3">A</Heading>
+            </Grid>
+          </IconButton>
+          <Card size="1">
+            <SegmentedControl.Root defaultValue="inbox">
+              <SegmentedControl.Item value="inbox">Inbox</SegmentedControl.Item>
+              <SegmentedControl.Item value="drafts">Drafts</SegmentedControl.Item>
+              <SegmentedControl.Item value="sent">Sent</SegmentedControl.Item>
+            </SegmentedControl.Root>
+          </Card>
+        </Flex>
       </Container>
     </Box>
   )

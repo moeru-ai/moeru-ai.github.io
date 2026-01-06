@@ -8,6 +8,9 @@ const Home = () => (
   <>
     <Header />
     <Hero />
+    <div className="min-h-screen">
+      TODO
+    </div>
     <Footer />
   </>
 )
