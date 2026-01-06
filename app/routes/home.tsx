@@ -3,13 +3,11 @@ import type { Route } from './+types/home'
 import { Footer } from '~/components/footer'
 import { Header } from '~/components/header'
 import { Hero } from '~/components/hero'
-import { SplitTextDemo } from '~/components/split-text-demo'
 
 const Home = () => (
   <>
     <Header />
     <Hero />
-    <SplitTextDemo />
     <Footer />
   </>
 )

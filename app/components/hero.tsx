@@ -3,7 +3,7 @@
 import type { Mesh } from 'three'
 
 import { useGSAP } from '@gsap/react'
-import { Box, Container, Flex, Heading, Section, Text } from '@radix-ui/themes'
+import { Box, Container, Flex, Grid, Heading, Section, Text } from '@radix-ui/themes'
 import { OrbitControls } from '@react-three/drei'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { gsap } from 'gsap'
@@ -26,16 +26,16 @@ const BoxMesh = () => {
   )
 }
 
+/** @see {@link https://tympanus.net/codrops/2025/05/14/from-splittext-to-morphsvg-5-creative-demos-using-free-gsap-plugins/} */
 export const Hero = () => {
   const divRef = useRef<HTMLDivElement>(null)
   const headingRef = useRef<HTMLHeadingElement>(null)
-  const splitText = useRef<SplitText>(null)
   const [headingHidden, setHeadingHidden] = useState(true)
 
   useGSAP(() => {
     CustomEase.create('osmo-ease', '0.625, 0.05, 0, 1')
 
-    splitText.current = new SplitText(headingRef.current, {
+    const split = new SplitText(headingRef.current, {
       linesClass: 'line',
       mask: 'words',
       type: 'lines,words',
@@ -43,6 +43,8 @@ export const Hero = () => {
     })
 
     gsap.set('.line', { overflow: 'hidden' })
+
+    return () => split.revert()
   }, { scope: divRef })
 
   const { contextSafe } = useGSAP({ scope: divRef })
@@ -67,9 +69,9 @@ export const Hero = () => {
     <Flex align="center" className="min-h-screen w-screen" justify="center">
       <Section size="3">
         <Container>
-          <Flex align="center" direction={{ initial: 'column', md: 'row' }} gap="6">
-            <Box flexGrow="1" style={{ maxWidth: 500 }}>
-              <Heading className="whitespace-nowrap" hidden={headingHidden} mb="4" ref={headingRef} size="9">
+          <Grid align="center" columns={{ initial: '1', md: '2' }} gap="6">
+            <Box ref={divRef} style={{ maxWidth: 500 }}>
+              <Heading className="whitespace-nowrap" mb="4" ref={headingRef} size="9" style={{ opacity: headingHidden ? 0 : 1 }}>
                 <Text>does kindness</Text>
                 <br />
                 <Text>plus sadness</Text>
@@ -92,7 +94,7 @@ export const Hero = () => {
                 <OrbitControls enableZoom={false} />
               </Canvas>
             </Box>
-          </Flex>
+          </Grid>
         </Container>
       </Section>
     </Flex>
