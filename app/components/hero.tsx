@@ -1,9 +1,13 @@
+'use client'
+
 import type { Mesh } from 'three'
 
 import { Box, Container, Flex, Heading, Section, Text } from '@radix-ui/themes'
 import { OrbitControls } from '@react-three/drei'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { useRef } from 'react'
+
+import * as Scrollytelling from '@bsmnt/scrollytelling'
 
 const BoxMesh = () => {
   const ref = useRef<Mesh>(null!)
@@ -19,32 +23,36 @@ const BoxMesh = () => {
 }
 
 export const Hero = () => (
-  <Flex align="center" className="min-h-screen w-screen" justify="center">
-    <Section size="3">
-      <Container>
-        <Flex align="center" direction={{ initial: 'column', md: 'row' }} gap="6">
-          <Box flexGrow="1" style={{ maxWidth: 500 }}>
-            <Heading mb="4" size="9">
-              <Text>does kindness plus sadness equal to</Text>
-              <br />
-              <Text color="teal" highContrast>zero?</Text>
-            </Heading>
-            <Text className="font-serif">
-              Moeru AI builds applications, open-source libraries,
-              <br />
-              and open-weight models to make AI a bit more “Moe”.
-            </Text>
-          </Box>
-          <Box className="rounded-[--radius-6] bg-[--gray-a2] h-[400px] w-full relative overflow-hidden">
-            <Canvas camera={{ fov: 45, position: [3, 3, 3] }}>
-              <ambientLight intensity={1.5} />
-              <pointLight position={[10, 10, 10]} />
-              <BoxMesh />
-              <OrbitControls enableZoom={false} />
-            </Canvas>
-          </Box>
-        </Flex>
-      </Container>
-    </Section>
-  </Flex>
+  <Scrollytelling.Root>
+    <Scrollytelling.Pin childHeight="0" pinSpacerHeight="100vh" top={0}>
+      <Flex align="center" className="min-h-screen w-screen" justify="center">
+        <Section size="3">
+          <Container>
+            <Flex align="center" direction={{ initial: 'column', md: 'row' }} gap="6">
+              <Box flexGrow="1" style={{ maxWidth: 500 }}>
+                <Heading mb="4" size="9">
+                  <Text>does kindness plus sadness equal to</Text>
+                  <br />
+                  <Text color="teal" highContrast>zero?</Text>
+                </Heading>
+                <Text className="font-serif">
+                  Moeru AI builds applications, open-source libraries,
+                  <br />
+                  and open-weight models to make AI a bit more “Moe”.
+                </Text>
+              </Box>
+              <Box className="rounded-[--radius-6] bg-[--gray-a2] h-[400px] w-full relative overflow-hidden">
+                <Canvas camera={{ fov: 45, position: [3, 3, 3] }}>
+                  <ambientLight intensity={1.5} />
+                  <pointLight position={[10, 10, 10]} />
+                  <BoxMesh />
+                  <OrbitControls enableZoom={false} />
+                </Canvas>
+              </Box>
+            </Flex>
+          </Container>
+        </Section>
+      </Flex>
+    </Scrollytelling.Pin>
+  </Scrollytelling.Root>
 )

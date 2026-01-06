@@ -17,8 +17,6 @@ import {
   ScrollRestoration,
 } from 'react-router'
 
-import * as Scrollytelling from '@bsmnt/scrollytelling'
-
 import './utils/gsap'
 
 import 'uno.css'
@@ -110,11 +108,9 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
           ref={lenisRef}
           root
         >
-          <Scrollytelling.Root>
-            <Theme accentColor="teal" appearance="dark">
-              {children}
-            </Theme>
-          </Scrollytelling.Root>
+          <Theme accentColor="teal" appearance="dark">
+            {children}
+          </Theme>
         </ReactLenis>
         <ScrollRestoration />
         <Scripts />
